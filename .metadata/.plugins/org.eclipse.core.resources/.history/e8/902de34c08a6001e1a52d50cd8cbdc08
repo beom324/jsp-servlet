@@ -1,0 +1,6 @@
+package vo;
+
+public class CategoryVO {
+	private int c_key;
+	private 
+}

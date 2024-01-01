@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   .item{
+      list-style: none;
+      border: solid 1px;
+      margin: 4px;
+      width: 30px;
+      height: 30px;
+   }
+   
+   ul{
+      float: left;
+   }
+   
+   #dept{
+      border: solid 1px;
+      width: 500px;
+      height: 400px;
+      float: left;
+      margin: 30px;
+      font-size: 30px;
+   }
+   
+   .active{
+      background: red;
+      color: white;
+   }
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+   $(function(){
+      $.ajax({
+         url:"listDeptJson",
+         success:function(data){
+            arr = data;
+            $.each(data,function(idx){
+               $("ul").append($("<li></li>").html(this.dno).addClass("item").attr("idx",idx));
+            })
+         }
+      });
+      
+      $(document).on("click","li",function(){
+         $("li").removeClass("active");
+         $(this).addClass("active");
+         var idx = $(this).attr("idx");
+         var d = arr[idx];
+         $("#dept").empty();
+         $("#dept").append($("<h1></h1>").html("부서번호 : "+d.dno));
+         $("#dept").append($("<h1></h1>").html("부서명 : "+d.dName));
+         $("#dept").append($("<h1></h1>").html("지역 : "+d.dLoc));
+      })
+   });
+</script>
+</head>
+<body>
+   <ul>
+      
+   </ul>
+   <div id="dept"></div>
+</body>
+</html>

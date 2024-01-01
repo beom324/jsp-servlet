@@ -1,0 +1,9 @@
+package day1228;
+
+import javax.naming.Context;
+
+public class ConnectionProvider {
+	public void getConnect() {
+		Context context = 
+	}
+}

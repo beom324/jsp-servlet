@@ -1,0 +1,26 @@
+package vo;
+
+public class ExamcodeVO {
+
+	private int examcode;
+
+	public int getExamcode() {
+		return examcode;
+	}
+
+	public void setExamcode(int examcode) {
+		this.examcode = examcode;
+	}
+
+	public ExamcodeVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ExamcodeVO(int examcode) {
+		super();
+		this.examcode = examcode;
+	}
+	
+	
+}

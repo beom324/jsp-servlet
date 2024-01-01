@@ -1,0 +1,9 @@
+const API_KEY = "l%2FrX7BdMRNWFQhaCjiPa%2FBeNDsyLpgyNpQd3uZ4BBOdcQfErtwGKhMLrdn%2FRu4ZB6w%2Fb0bxBAiu%2FrCoIwG2Zug%3D%3D";
+async function getData(){
+	const url ="http://openapi.q-net.or.kr/api/service/rest/InquiryListNationalQualifcationSVC/getList?qualgbcd=t&qualgbnm=국가기술자격&seriescd=1&seriesnm=기술사&jmcd=0752&jmfldnm=가스기술사&obligfldcd=21&obligfldnm=정보통신&mdobligfldcd=211&mdobligfldnm=정보기술";
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log("data", data);
+}
+
+getData();

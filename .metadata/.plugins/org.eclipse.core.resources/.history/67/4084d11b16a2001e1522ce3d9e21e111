@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOAP Request Example</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = 'http://openapi.q-net.or.kr/api/service/rest/InquiryListNationalQualifcationSVC?_wadl&_type=xml';
+        var xmlData = `<?xml version="1.0" encoding="UTF-8"?>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:head="http://apache.org/headers" xmlns:soap="http://soap.open.pp.acrc/">
+                <soapenv:Header>
+                    <head:ComMsgHeader>
+                        <ServiceKey>nlVTprAFSN5y5cSLThrJCbvnU5cEC0jJ8TijGhCox6Y6V4bnXRtKOVBl6l%2Fz1yCGBg8KjoaKJkhKWQeybOxrug%3D%3D</ServiceKey>
+                    </head:ComMsgHeader>
+                </soapenv:Header>
+                <soapenv:Body>
+                    <soap:getOpenProposalList>
+                        <OpenPropListRequest>
+                            <nowPageNo>1</nowPageNo>
+                            <pageMg>2</pageMg>
+                            <region>5%EC%9B%9420101101</region>
+                            <regTo>20101130</regTo>
+                        </OpenPropListRequest>
+                    </soap:getOpenProposalList>
+                </soapenv:Body>
+            </soapenv:Envelope>`;
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'text/xml');
+        
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                // Handle the SOAP response here
+            }
+        };
+
+        xhr.send(xmlData);
+    </script>
+</body>
+</html>

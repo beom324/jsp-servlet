@@ -1,0 +1,49 @@
+<%@page import="com.sist.vo.GoodsVO"%>
+<%@page import="com.sist.dao.GoodsDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	GoodsDAO dao = new GoodsDAO();
+	int no = Integer.parseInt(request.getParameter("no"));
+	GoodsVO vo = dao.findByNo(no);
+	
+	
+	
+	int num = vo.getNo();
+	String name = vo.getName();
+	int price = vo.getPrice();
+	int qty = vo.getQty();
+	String fname = vo.getFname();
+	
+%>
+<table border="1" >
+	<tr>
+		<th>상품번호</th>
+		<th>상품명</th>
+		<th>상품가격</th>
+		<th>상품수량</th>
+		<th>상품사진</th>
+		<th>삭제</th>
+	</tr>
+	<tr>
+		<td><%=num%></td>
+		<td><%=name%></td>
+		<td><%=price%></td>
+		<td><%=qty%></td>
+		<td><img src="./upload/<%=fname%>" width="100" height="100"></td>
+		<td><a href="deleteGoods.jsp?no=<%=no%>">삭제하기</a></td>
+	</tr>
+
+	
+	
+</table>
+</body>
+</html>

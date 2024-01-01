@@ -1,0 +1,25 @@
+<%@page import="com.sist.vo.GoodsVO"%>
+<%@page import="com.sist.dao.GoodsDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	GoodsDAO dao = new GoodsDAO();
+	int no = Integer.parseInt(request.getParameter("no"));
+	GoodsVO vo = dao.findByNo(no);
+	
+	out.print(vo.getNo());
+	out.print(vo.getName());
+	out.print(vo.getPrice());
+	out.print(vo.getQty());
+	out.print(vo.getFname());
+%>
+</body>
+</html>

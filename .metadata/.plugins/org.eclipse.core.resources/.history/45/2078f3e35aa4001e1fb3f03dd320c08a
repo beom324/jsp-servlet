@@ -1,0 +1,20 @@
+package com.sist.dao;
+
+import java.util.ArrayList;
+
+import com.sist.vo.BoardVO;
+
+public class BoardDAO {
+
+	public ArrayList<BoardVO> findAll(){
+		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
+		
+		String sql = "select * from board";
+		try {
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return list;
+	}
+}

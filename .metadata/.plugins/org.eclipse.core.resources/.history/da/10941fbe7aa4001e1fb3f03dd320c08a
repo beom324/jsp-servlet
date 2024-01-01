@@ -1,0 +1,31 @@
+<%@page import="com.sist.vo.BoardVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>게시물 목록</h2>
+<hr>
+<table border="1" width="80%">
+	<tr>
+		<th width="10%">글번호</th>
+		<th width="70%">글제목</th>
+		<th width="20%">작성자</th>
+	</tr>
+	<c:forEach var="b" items="${list}"> <!-- 서블릿에서 상태유지한 list의 값을 하나씩 꺼내서 b에 담아라-->
+		<tr>
+			<td><a href="boardDetail.jsp?no="+${b.no}+"">${b.no}</a></td>
+			<td>${b.title }</td>
+			<td>${b.writer }</td>
+		</tr>
+	</c:forEach>
+
+</table>
+</body>
+</html>

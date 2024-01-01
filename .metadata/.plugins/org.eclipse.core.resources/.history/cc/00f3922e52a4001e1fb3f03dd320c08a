@@ -1,0 +1,43 @@
+<%@page import="com.sist.vo.GoodsVO"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@page import="com.sist.dao.GoodsDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%	
+	String path = request.getRealPath("upload");
+	out.print("path : " + path);
+	request.setCharacterEncoding("utf-8");
+	
+	MultipartRequest multi = new MultipartRequest(request,path,1024*1024*5,"UTF-8",new DefaultFileRenamePolicy());
+	
+	GoodsVO vo = new GoodsVO();
+	vo.setNo(Integer.parseInt(multi.getParameter("no")));
+	vo.setName(multi.getParameter("name"));
+	vo.setPrice(Integer.parseInt(multi.getParameter("price")));
+	vo.setQty(Integer.parseInt(multi.getParameter("qty")));
+	vo.setFname(multi.getOriginalFileName("uploadFile"));
+	
+	
+%>
+	<jsp:useBean id="dao" class="com.sist.dao.GoodsDAO"></jsp:useBean>
+<%
+	int re = dao.updateGoods(vo);
+	if(re==1){
+		System.out.print("상품이 수정되었습니다");
+	}else{
+		System.out.print("상품수정에 실패하였습니다");
+	}
+%>
+
+<a href="insertGoods.jsp"> 상품 등록</a>
+<a href="listGoods.jsp"> 상품 목록</a>
+</body>
+</html>

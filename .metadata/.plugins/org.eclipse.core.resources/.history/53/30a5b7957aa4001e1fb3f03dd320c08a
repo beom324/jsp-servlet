@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+작성자<p>${vo.writer}</p><br>
+제목<p>${vo.title}</p><br>
+내용<p>${vo.content}</p><br>
+작성일자<p>${vo.regdate}</p><br>
+조회수<p>${vo.hit}</p><br>
+파일명<p>${vo.fname}</p><br>
+
+</c:forEach>
+</body>
+</html>

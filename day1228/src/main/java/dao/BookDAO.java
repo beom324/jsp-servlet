@@ -1,0 +1,129 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import db.ConnectionProvider;
+import vo.BookVO;
+
+public class BookDAO {
+
+	public int getNextNO() {
+		String sql = "select nvl(max(bookid),0)+1 from book";
+		int no=0;
+		try {
+			Connection conn = ConnectionProvider.getConnect();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				no=rs.getInt(1);
+			}
+					
+			ConnectionProvider.close(conn, rs, stmt);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		return no;
+	}
+	public ArrayList<BookVO> findAll(){
+		String sql = "select * from book";
+		ArrayList<BookVO> list = new ArrayList<BookVO>();
+		try {			
+			Connection conn =  ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(new BookVO(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5)));
+			}
+			ConnectionProvider.close(conn, rs, pstmt);						
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return list;		
+	}
+	
+	public int deleteBook(int no) {
+		String sql = "delete book where bookid=?";
+		int re = -1;
+		try {
+			Connection conn = ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			
+			re = pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return re;
+		
+	}
+	
+	public int updateBook(BookVO b) {
+		String sql ="update book set bookname=?,price=?,publisher=?, fname=? where bookid=?";
+		int re = -1;
+		try {
+			Connection conn = ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, b.getBookname());
+			pstmt.setInt(2, b.getPrice());
+			pstmt.setString(3, b.getPublisher());
+			pstmt.setString(4, b.getFname());
+			pstmt.setInt(5, b.getBookid());
+			
+			re = pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return re;
+	}
+	public int insertBook(BookVO b) {
+		String sql = "insert into book values (?,?,?,?,?)";
+		int re = -1;
+		try {
+			Connection conn = ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, b.getBookid());
+			pstmt.setString(2, b.getBookname());
+			pstmt.setInt(3, b.getPrice());
+			pstmt.setString(4, b.getPublisher());
+			pstmt.setString(5, b.getFname());
+			re=pstmt.executeUpdate();
+			ConnectionProvider.close(conn, pstmt);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+				
+		return re;
+	}
+	
+	public BookVO findByBookId(int no) {
+		String sql = "select * from book where bookid=?";
+		BookVO vo = new BookVO();
+		try {
+			Connection conn = ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setBookid(no);
+				vo.setBookname(rs.getString(2));
+				vo.setPrice(rs.getInt(3));
+				vo.setPublisher(rs.getString(4));
+				vo.setFname(rs.getString(5));
+			}
+			ConnectionProvider.close(conn, rs, pstmt);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return vo;		
+	}
+}

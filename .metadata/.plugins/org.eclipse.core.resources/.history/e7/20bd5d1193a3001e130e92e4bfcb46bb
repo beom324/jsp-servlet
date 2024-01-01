@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%request.setCharacterEncoding("utf-8"); %>
+<jsp:useBean id="regBean" class="com.sist.vo.MemberBean"></jsp:useBean>
+<jsp:setProperty property="*" name="regBean"/>
+<table width="80%" align="center" cellpadding="5" cellspacing="0">
+	<tr>
+		<td align="center" valign="middle" bgcolor="#ffffcc">
+			<table border="1" width="90%" cellspacing="0" cellpadding="2" align="center">
+				<form name="regForm" method="post" action="memberInsert.jsp">
+				
+				</form>
+			</table>
+		</td>
+	</tr>
+	
+</table>
+</body>
+</html>

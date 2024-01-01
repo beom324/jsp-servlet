@@ -1,0 +1,29 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import db.ConnectionProvider;
+import vo.BookVO;
+
+public class BookDAO {
+
+	public ArrayList<BookVO> findAll(){
+		String sql = "select * from book";
+		ArrayList<BookVO> list = new ArrayList<BookVO>();
+		try {			
+			Connection conn =  ConnectionProvider.getConnect();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(new BookVO(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4)));
+			}
+			ConnectionProvider.close(conn, rs, pstmt);						
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return list;		
+	}
+}
