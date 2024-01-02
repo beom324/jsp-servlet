@@ -1,7 +1,0 @@
-function inputCheck(){
-	if(document.regForm.id.value==""){
-		alert("아이디를 입력 해주세요");
-		document.regForm.id.focus();
-		return;
-	}
-}

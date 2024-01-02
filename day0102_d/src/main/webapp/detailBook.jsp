@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+		background: yellow;
+		width : 200px;
+		height: 100px;
+		border : 1px solid black;
+	}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div >
+<input type="hidden" name ="bookid" value="${vo.bookid }">
+제목 : <span>${vo.bookname}</span><br>
+출판사 : <span>${vo.publisher }</span><br>
+가격 : <span>${vo.price}</span> <br>
+<img src="./bookImage/${vo.fname }" width="200" height="200">
+
+</div>
+<hr>
+<a href="listBook.do">목록</a>
+<a href="updateBook.do?bookid=${vo.bookid}">수정</a>
+
+</body>
+</html>

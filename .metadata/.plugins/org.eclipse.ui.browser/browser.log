@@ -57,3 +57,7 @@
 
 1월 02, 2024 09:50:44.72 NEW SESSION
 1월 02, 2024 09:50:44.75 [4424:9968:0102/095044.716:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_ABORTED)
+
+1월 02, 2024 14:44:01.63 NEW SESSION
+1월 02, 2024 14:44:01.65 [1520:11976:0102/144401.629:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+1월 02, 2024 16:38:47.53 [18376:7392:0102/163847.530:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_ABORTED)

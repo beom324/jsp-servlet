@@ -35,7 +35,9 @@ public class InsertBook extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("insertBook.jsp");
+		
 		dispatcher.forward(request, response);
+		
 	}
 
 	/**
