@@ -8,6 +8,6 @@
 </head>
 <body>
 <h2>게시글이 삭제되었습니다</h2>
-<a href="listBoard">목록</a>
+<a href="listBoard.do">목록</a>
 </body>
 </html>

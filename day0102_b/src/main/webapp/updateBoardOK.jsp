@@ -9,6 +9,7 @@
 <body>
 	게시물을 수정하였습니다
 	<hr>
-	<a href="listBoard.do">게시물 등록</a>
+	<a href="listBoard.do">게시물 목록</a>
+	
 </body>
 </html>
