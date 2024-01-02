@@ -172,7 +172,13 @@
       <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day1228" path="/day1228" reloadable="true" source="org.eclipse.jst.jee.server:day1228">
       		<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
       </Context>
-      <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teamProject" path="/teamProject" reloadable="true" source="org.eclipse.jst.jee.server:teamProject"/></Host>         
+      <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teamProject" path="/teamProject" reloadable="true" source="org.eclipse.jst.jee.server:teamProject"/><Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day0102_" path="/day0102_" reloadable="true" source="org.eclipse.jst.jee.server:day0102_">
+         	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
+      </Context>
+      <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day0102_b" path="/day0102_b" reloadable="true" source="org.eclipse.jst.jee.server:day0102_b">
+      	         	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
+		</Context>      	
+      </Host>         
     </Engine>
   </Service>
 </Server>

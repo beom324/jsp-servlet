@@ -54,3 +54,6 @@
 
 12월 28, 2023 14:07:33.31 NEW SESSION
 12월 28, 2023 14:07:33.33 [15148:10304:1228/140733.279:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 02, 2024 09:50:44.72 NEW SESSION
+1월 02, 2024 09:50:44.75 [4424:9968:0102/095044.716:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_ABORTED)
