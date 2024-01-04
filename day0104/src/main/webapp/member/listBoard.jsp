@@ -42,8 +42,12 @@
 			<td>${b.writer }</td>
 			<td>${b.regdate }
 		</tr>
+			
 		</c:forEach>
 </table>
+	<c:forEach var="i" begin="1" end="${totalPage }">
+	<a href="listBoard.do?pageNUM=${i}">${i}&nbsp;</a>
+	</c:forEach>
 		<a href="insertBoard.do" value="글등록">글등록</a>
 		
 </body>

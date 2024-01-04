@@ -11,9 +11,30 @@ import vo.BoardVO;
 
 public class BoardDAO {
 	
-	
-	//이미달려있는 답글들의 step을 1씩 증가하는 메소드
-	
+	public static int pageSIZE = 10; //한 화면에 보여줄 레코드 수
+	public static int totalRecord = 0;// 전체 레코드의 수
+	public static int totalPage = 0;//전체 페이지 수
+
+	public int getTotalRecord() {
+		String sql = "select count(*) from board";
+		int re =0;
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				re = rs.getInt(1);
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return re;
+
+	}
+
+
+	//이미달려있는 답글들의 step을 1씩 증가하는 메소드	
 	public void updateStep(int b_ref, int b_step) {
 		String sql = "update board set b_step = b_step + 1 where b_ref =? and b_step>?";
 		try {
@@ -50,19 +71,39 @@ public class BoardDAO {
 		return re;
 	}
 
-	public ArrayList<BoardVO> findAll(){
+	
+	
+	
+	public ArrayList<BoardVO> findAll(int pageNUM){
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>();
 		
-		String sql = "select * from board order by b_ref desc, b_level";
+		totalRecord = getTotalRecord();
+		totalPage = (int)Math.ceil(totalRecord*1.0/pageSIZE);
+		
+		//페이지번호에 따른 start와 end를 계산하여 출력
+		int start = (pageNUM-1)*pageSIZE+1;
+		int end = start+pageSIZE -1;
+		
+		if(end>totalRecord) {
+			end=totalRecord;
+		}
+		System.out.println(start);
+		System.out.println(end);
+		
+		
+		
+		String sql = "select no,title,writer,pwd,content,regdate,hit,fname,ip,b_ref,b_level,b_step from (select rownum n,no,title,writer,pwd,content,regdate,hit,fname,ip,b_ref,b_level,b_step from(select * from board order by b_ref desc, b_step))a where a.n  between ? and ?";
 		try {
 			Connection conn = ConnectionProvider.getConnection();
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				list.add(new BoardVO(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDate(6), rs.getInt(7), rs.getString(8),rs.getString(9),rs.getInt(10),rs.getInt(11),rs.getInt(12)));
 			}
 			
-			ConnectionProvider.close(conn, stmt,rs);
+			ConnectionProvider.close(conn, pstmt,rs);
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
