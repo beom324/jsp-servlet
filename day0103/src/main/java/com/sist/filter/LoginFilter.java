@@ -49,9 +49,7 @@ public class LoginFilter extends HttpFilter implements Filter {
 		}else {
 			//세션변수 session_id가 없다면 로그인페이지로 보낸다
 			((HttpServletResponse)response).sendRedirect("/day0103/login.do");//그냥 login.do라고하면 
-																	//member/login.do로 가기때문에 컨택스트이름을 써주어야함
-			
-			
+																	//member/login.do로 가기때문에 컨택스트이름을 써주어야함			
 		}
 		
 		

@@ -64,3 +64,10 @@
 
 1월 03, 2024 12:18:28.47 NEW SESSION
 1월 03, 2024 12:18:28.52 [8200:11736:0103/121828.466:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 03, 2024 16:23:34.24 [3836:18196:0103/162334.247:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 04, 2024 09:19:29.68 NEW SESSION
+1월 04, 2024 09:19:29.73 [12984:7320:0104/091929.680:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 04, 2024 10:19:32.28 [12984:7320:0104/101932.288:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+1월 04, 2024 10:58:46.92 [12984:7320:0104/105846.920:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+1월 04, 2024 11:06:05.25 [12984:7320:0104/110605.255:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost

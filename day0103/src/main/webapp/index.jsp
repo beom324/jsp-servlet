@@ -9,6 +9,5 @@
 <body>
 	<a href="joinMember.do">회원가입</a>
 	<a href="login.do">로그인</a>
-
 </body>
 </html>
