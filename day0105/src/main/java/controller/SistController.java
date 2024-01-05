@@ -29,6 +29,7 @@ public class SistController extends HttpServlet {
     @Override
 	public void init(ServletConfig config) throws ServletException {
 //		super.init(config);
+    	
     	map= new HashMap<String, SistAction>();
     	String path = config.getServletContext().getRealPath("WEB-INF");
     	try {
@@ -62,6 +63,7 @@ public class SistController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String cmd = uri.substring(uri.indexOf("/",1)+1);
 		SistAction action = map.get(cmd);
+		System.out.println(action);
 		String viewPage = action.pro(request, response);
 		
 		

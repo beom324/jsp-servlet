@@ -76,3 +76,9 @@
 1월 04, 2024 14:20:25.36 [15136:3320:0104/142025.326:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
 1월 04, 2024 14:53:54.48 [15136:3320:0104/145354.483:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
 1월 04, 2024 14:53:55.92 [15136:3320:0104/145355.913:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+
+1월 05, 2024 14:24:21.04 NEW SESSION
+1월 05, 2024 14:24:21.06 [10948:1348:0105/142421.035:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 05, 2024 14:42:37.44 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+1월 05, 2024 14:54:07.96 [11960:1804:0105/145407.964:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 05, 2024 14:54:23.66 [11960:1804:0105/145423.660:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost

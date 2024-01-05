@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="javax.naming.Context"/>
-    <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
-    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
-    <fullyQualifiedTypeName name="java.sql.Statement"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="com.sist.action.InsertBoardAction"/>
-    <fullyQualifiedTypeName name="com.sist.vo.BoardVO"/>
-    <fullyQualifiedTypeName name="com.sist.dao.BoardDAO"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="com.sist.action.ListBoardAction"/>
     <fullyQualifiedTypeName name="com.sist.action.DeleteBoardAction"/>
@@ -31,7 +21,6 @@
     <fullyQualifiedTypeName name="action.UpdateBookAction"/>
     <fullyQualifiedTypeName name="action.UpdateBookOKAction"/>
     <fullyQualifiedTypeName name="org.apache.jasper.compiler.Node.SetProperty"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.sist.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="com.sist.vo.MemberVO"/>
     <fullyQualifiedTypeName name="org.apache.catalina.Session"/>
@@ -47,17 +36,28 @@
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="vo.MemberVO"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-    <fullyQualifiedTypeName name="vo.BoardVO"/>
     <fullyQualifiedTypeName name="dao.MemberDAO"/>
-    <fullyQualifiedTypeName name="dao.BoardDAO"/>
-    <fullyQualifiedTypeName name="db.ConnectionProvider"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="java.awt.print.Printable"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.ls.LSOutput"/>
+    <fullyQualifiedTypeName name="org.json.XML"/>
+    <fullyQualifiedTypeName name="netscape.javascript.JSObject"/>
+    <fullyQualifiedTypeName name="org.json.JSONMLParserConfiguration"/>
+    <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
+    <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="vo.BoardVO"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="dao.BoardDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="netscape.javascript.JSObject"/>
-    <fullyQualifiedTypeName name="org.json.JSONObject"/>
+    <fullyQualifiedTypeName name="db.ConnectionProvider"/>
+    <fullyQualifiedTypeName name="vo.GoodsVO"/>
 </qualifiedTypeNameHistroy>
