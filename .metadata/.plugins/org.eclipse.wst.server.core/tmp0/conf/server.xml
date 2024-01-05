@@ -193,7 +193,11 @@
       <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day0104" path="/day0104" reloadable="true" source="org.eclipse.jst.jee.server:day0104">
                        <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
       </Context>
-      </Host>         
+      <Context docBase="C:\jspTest\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\day0105" path="/day0105" reloadable="true" source="org.eclipse.jst.jee.server:day0105">
+                             <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
+      </Context>
+      </Host>
+               
     </Engine>
   </Service>
 </Server>

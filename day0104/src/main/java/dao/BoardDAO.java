@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+
 import db.ConnectionProvider;
 import vo.BoardVO;
 
@@ -71,7 +73,7 @@ public class BoardDAO {
 		return re;
 	}
 
-	
+
 	
 	
 	public ArrayList<BoardVO> findAll(int pageNUM){
