@@ -35,3 +35,4 @@ public class GoodsListAction implements SistAction {
 	}
 
 }
+

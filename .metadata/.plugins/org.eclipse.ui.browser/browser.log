@@ -82,3 +82,11 @@
 1월 05, 2024 14:42:37.44 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 1월 05, 2024 14:54:07.96 [11960:1804:0105/145407.964:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
 1월 05, 2024 14:54:23.66 [11960:1804:0105/145423.660:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+1월 06, 2024 17:06:02.47 NEW SESSION
+1월 06, 2024 17:06:02.50 [15812:1136:0106/170602.470:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+1월 06, 2024 17:10:28.78 [8412:16152:0106/171028.786:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_ABORTED)
+
+1월 08, 2024 11:28:26.24 NEW SESSION
+1월 08, 2024 11:28:26.28 [292:11632:0108/112826.193:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 08, 2024 11:37:35.33 [292:11632:0108/113735.334:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost

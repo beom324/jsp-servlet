@@ -199,6 +199,12 @@
       <Context docBase="day0105_goods" path="/day0105_goods" reloadable="true" source="org.eclipse.jst.jee.server:day0105_goods">
                                    <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
       </Context>
+      <Context docBase="tp" path="/tp" reloadable="true" source="org.eclipse.jst.jee.server:tp">
+      			<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
+		</Context>      
+      <Context docBase="day0108" path="/day0108" reloadable="true" source="org.eclipse.jst.jee.server:day0108">
+                                   <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="sist" password="madang" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="c##madang"/>
+		</Context>      
       </Host>
                
     </Engine>

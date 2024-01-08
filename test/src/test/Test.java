@@ -6,6 +6,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.json.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -24,6 +25,9 @@ public class Test {
         conn.setRequestProperty("Content-type", "application/json");
         System.out.println("Response code: " + conn.getResponseCode());
         BufferedReader rd;
+        
+        String name = "";
+        
         if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
             rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         } else {
@@ -36,19 +40,17 @@ public class Test {
         }
         
         JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = (JSONObject)jsonParser.parse(sb.toString());
-        JSONObject rp = (JSONObject)jsonObject.get("response");
-        JSONObject body = (JSONObject)rp.get("body");
-        JSONObject items = (JSONObject)body.get("items");
+        //jsonObject = (JSONObject)jsonParser.parse(sb.toString());
+        //JSONObject rp = (JSONObject)jsonObject.get("response");
+        //JSONObject body = (JSONObject)rp.get("body");
+        //JSONObject items = (JSONObject)body.get("items");
         
-        ArrayList arr = (ArrayList) items.get("item");
+        //ArrayList arr = (ArrayList) items.get("item");
         
-        for (int i = 0; i < arr.size(); i++) {
-           System.out.println(i + "번쨰");
-           HashMap<String, String> map = (HashMap<String, String>) arr.get(i);
-           System.out.println(arr.get(i));
-           System.out.println(map.get("jmfldnm"));
-        }
+        //for (int i = 0; i < arr.size(); i++) {
+        	
+           System.out.println(name);
+        //}
         
         rd.close();
         conn.disconnect();
