@@ -7,47 +7,42 @@
 <head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
+
 	$(function(){
 		$.ajax({
-			url:"listPublisher.do",
-			success:function(arr){
-				$.each(arr, function(){
-					var option = $("<option></option>").html(this);
-					$(option).attr("value",this);
-					$("#s_pub").append(option);
-				});
+			type : "GET",
+			url : "listPublisher.do",
+			data : ${json},
+			success : function(data){
+				alert(data);
 			}
-		});
 		
+		})
 		
-		$("#option").change(function(){
+		$("#option").change(function (){
 			var v = $(this).val();
 			if(v == "price"){
 				$("#oper").css("display","inline-block");
 			}else{
 				$("#oper").css("display","none");
 			}
-			
-			
-			if(v == "publisher"){
-				$("#s_pub").css("display","inline-block");
-				$("#search").css("display", "none");
-				
-				$("#s_pub").attr("name","search");
-				$("#search").attr("name",null);
+			if(v=="publisher"){
+				$("#publisher").css("display","inline-block");
 			}else{
-				$("#s_pub").css("display","none");
-				$("#search").css("display", "inline-block");
-				
-				$("#s_pub").attr("name",null);
-				$("#search").attr("name","search");
-			}
+				$("#publisher").css("display","none");
+			}									
 		});
-	});
+		
+		
+			
+	})
+	
 </script>
 <style>
-	
-	#oper,#s_pub{
+	#publisher{
+		display:none;
+	}
+	#oper{
 		display: none;
 	}
 </style>
@@ -58,18 +53,14 @@
 <h2>도서목록</h2>
 <form method="post" action="listBook.do">
 	<select name="option" class="option" id="option"><option value="bookName">도서명</option><option value="publisher">출판사</option><option value="price">가격</option></select>
-
+	<select name="publisher" class="publisher" id="publisher">
+		<option id="combo"></option>
+	</select>
 	<select name="oper" class="oper" id="oper">
-		<option value=">">></option>
-		<option value="<"><</option>
-		<option value=">=">>=</option>
-		<option value="<="><=</option>
-		<option value="=">=</option>
+		<option value=">">></option><option value="<"><</option><option value=">=">>=</option><option value="<="><=</option><option value="=">=</option>
 		
 	</select>
-	<input type="text" name="search" id="search">
-	<select name="s_pub" id="s_pub">		
-	</select>	
+	<input type="text" name="search">
 <input type="submit" value="검색">
 
 

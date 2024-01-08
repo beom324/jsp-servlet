@@ -8,8 +8,5 @@
 </head>
 <body>
 
-<%
-	response.sendRedirect("listBook.do");
-%>
 </body>
 </html>

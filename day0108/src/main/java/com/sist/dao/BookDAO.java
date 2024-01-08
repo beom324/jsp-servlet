@@ -40,8 +40,6 @@ public class BookDAO {
 			sql += " order by " +sort+asc;
 			
 		}			
-
-		System.out.println(sql);
 		
 		try {
 			Connection conn = ConnectionProvider.getConnection();
@@ -58,8 +56,21 @@ public class BookDAO {
 		
 		return list;
 	}
-	
-	
-	
-
+		
+	public ArrayList<String> listPublisher(){
+		String sql ="select distinct publisher from book";
+		ArrayList<String> list = new ArrayList<String>();
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(rs.getString(1));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);												
+		}catch(Exception e) {
+			System.out.println("dao 오류 : " +e.getMessage());
+		}				
+		return list;		
+	}			
 }

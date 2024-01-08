@@ -90,3 +90,10 @@
 1월 08, 2024 11:28:26.24 NEW SESSION
 1월 08, 2024 11:28:26.28 [292:11632:0108/112826.193:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
 1월 08, 2024 11:37:35.33 [292:11632:0108/113735.334:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+1월 08, 2024 15:52:49.75 NEW SESSION
+1월 08, 2024 15:52:49.78 [14464:12212:0108/155249.750:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+1월 08, 2024 15:56:43.27 [14464:12212:0108/155643.274:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 08, 2024 16:31:42.17 [13400:14404:0108/163142.171:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+1월 08, 2024 16:56:45.97 [13400:14404:0108/165645.973:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+1월 08, 2024 17:00:42.75 [13400:14404:0108/170042.751:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)

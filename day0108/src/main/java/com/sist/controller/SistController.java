@@ -50,7 +50,6 @@ public class SistController extends HttpServlet {
 		String uri=request.getRequestURI();
 		String cmd = uri.substring(uri.indexOf("/",1)+1);// 슬러쉬는 빼고 갖고오기 위해 +1
 		SistAction action = map.get(cmd);
-		System.out.println(action);
 		String viewPage = action.pro(request, response);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		
