@@ -37,12 +37,33 @@ public class EmpDAO {
 		}
 		return list;
 	}
+
+	public ArrayList<String> listDno(){
+		ArrayList<String> list = new ArrayList<String>();
+		String sql ="select distinct dno from emp";
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(rs.getString(1));
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		}catch(Exception e) {
+			System.out.println("부서 출력오류 : " + e.getMessage());
+		}
+		return list;
+	}
 	
 	public ArrayList<EmpVO> findAll(String search, String option){
 		ArrayList<EmpVO> list = new ArrayList<EmpVO>();
 		String sql ="select eno,ename,job,hiredate,salary,dno,mgr,comm,rpad(substr(jumin,1,8),14,'*') as jumin,email from emp";
-		if(search!=null && !search.equals(" ")) {
-			sql+=" where "+option+" like '%"+search+"%' ";
+		if(search!=null && !search.equals(" ")) {			
+			if(option.equals("job")) {
+				sql+=" where job = '"+search+"'";
+			}else {
+				sql+=" where "+option+" like '%"+search+"%' ";
+			}			
 		}
 		System.out.println(sql);
 		try {

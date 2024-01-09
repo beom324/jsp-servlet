@@ -6,22 +6,59 @@
 <head>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-	$.ajax({
-		url :"listJob.do",
-		success:(function(arr){
-			$.each(arr, function(){
-					var option = $("<option></option>").html(this);
-					$(option).attr("select",this);
-					$("#select").append(option)
-					
-			})
-		})
-		
-	})
+
 
 	$(function(){
+		
+		var jobList;
+		var dnoList;
+		
+		$.ajax({
+			url :"listJob.do",
+			success:(function(arr){
+				jobList=arr;
+	
+				})
+			})
+		
+		$.ajax({
+			url :"listDno.do",
+			success :(function(arr){
+				dnoList=arr;
+
+			})
+		})	
+			
+			
+		function addDno(){
+			$.each(dnoList, function(){
+				var option = $("<option></option>").html(this);
+				$(option).attr("select",this);
+				$("#select").append(option)
+			})
+		}
+		
+		
+		function addJob(){
+			$.each(jobList, function(){
+				var option = $("<option></option>").html(this);
+				$(option).attr("select",this);
+				$("#select").append(option)
+			})
+		}
+		
+		
 		$("#option").change(function(){
+			$("#select").html(null);
 			if($(this).val()=="job"){
+				addJob();
+				$("#search").css("display","none")
+				$("#select").css("display","inline-block")
+				$("#select").attr("name","search");
+				$("#search").attr("name",null);
+			}
+			else if($(this).val()=="dno"){
+				addDno();
 				$("#search").css("display","none")
 				$("#select").css("display","inline-block")
 				$("#select").attr("name","search");
@@ -36,6 +73,8 @@
 			})
 		}
 	)
+	
+	
 </script>
 <style>
 	#select{
