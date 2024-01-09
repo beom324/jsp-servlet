@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.sist.db.ConnectionProvider;
 import com.sist.vo.EmpVO;
@@ -87,6 +88,42 @@ public class EmpDAO {
 			ConnectionProvider.close(conn, pstmt, rs);
 		}catch(Exception e) {
 			System.out.println("사원목록출력오류 : " + e.getMessage());
+		}
+		return list;
+	}
+	
+	public ArrayList<HashMap<String, Object>> empList(){
+		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String,Object>>();
+		String sql ="select e.eno,e.ename,d.dno,dname,e.salary,e.comm, e.hiredate,TRUNC(MONTHS_BETWEEN(SYSDATE, e.hiredate)),m.ename,rpad(substr(e.jumin,1,8),14,'*') as jumin,e.email,(E.SALARY+E.COMM) as total\r\n"
+				+ " from emp e, emp m, dept d\r\n"
+				+ " where m.eno=e.mgr \r\n"
+				+ " and e.dno=d.dno\r\n";
+				
+		
+		try {
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put("eno", rs.getInt(1));
+				map.put("ename", rs.getString(2));
+				map.put("dno", rs.getString(3));
+				map.put("dname", rs.getString(4));
+				map.put("salary", rs.getInt(5));
+				map.put("comm", rs.getInt(6));
+				map.put("hiredate", rs.getDate(7));
+				map.put("workday", rs.getString(8));
+				map.put("mname", rs.getString(9));
+				map.put("jumin", rs.getString(10));
+				map.put("email", rs.getString(11));
+				map.put("total", rs.getInt(12));
+				list.add(map);
+			}
+			ConnectionProvider.close(conn, pstmt, rs);
+		}catch(Exception e) {
+			System.out.println("사원목록 출력오류 : " + e.getMessage());
+			
 		}
 		return list;
 	}
